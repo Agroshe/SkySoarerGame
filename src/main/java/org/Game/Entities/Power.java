@@ -1,4 +1,4 @@
-package com.github.hanyaeger.tutorial.Game.Entities;
+package org.Game.Entities;
 
 
 import com.github.hanyaeger.api.Coordinate2D;
@@ -7,7 +7,7 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
-import com.github.hanyaeger.tutorial.Game.Scenes.GameScene;
+import org.Game.Scenes.GameScene;
 
 import java.util.List;
 

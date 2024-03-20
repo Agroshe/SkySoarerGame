@@ -1,4 +1,4 @@
-package com.github.hanyaeger.tutorial.Game.Entities.Buttons;
+package org.Game.Entities.Buttons;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.RectangleEntity;

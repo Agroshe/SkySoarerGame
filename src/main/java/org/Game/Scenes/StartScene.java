@@ -1,10 +1,10 @@
-package com.github.hanyaeger.tutorial.Game.Scenes;
+package org.Game.Scenes;
 
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.StaticScene;
-import com.github.hanyaeger.tutorial.Game.Entities.Buttons.ButtonStartGame;
-import com.github.hanyaeger.tutorial.Game.SkySourerGame;
+import org.Game.Entities.Buttons.ButtonStartGame;
+import org.Game.SkySourerGame;
 
 public class StartScene extends StaticScene {
 

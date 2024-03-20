@@ -1,7 +1,7 @@
-package com.github.hanyaeger.tutorial.Game.Entities.Buttons;
+package org.Game.Entities.Buttons;
 
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.tutorial.Game.SkySourerGame;
+import org.Game.SkySourerGame;
 import javafx.scene.input.MouseButton;
 
 public class ButtonExit extends Button {

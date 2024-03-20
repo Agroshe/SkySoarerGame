@@ -1,23 +1,22 @@
-package com.github.hanyaeger.tutorial.Game;
+package org.Game;
 
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.tutorial.Game.Scenes.DeathScene;
-import com.github.hanyaeger.tutorial.Game.Scenes.GameScene;
-import com.github.hanyaeger.tutorial.Game.Scenes.StartScene;
+import org.Game.Scenes.DeathScene;
+import org.Game.Scenes.GameScene;
+import org.Game.Scenes.StartScene;
 
 public class SkySourerGame extends YaegerGame {
 
 	private int Highscore;
 
 	public static void main(String[] args) {
-//		String[] arguments = new String[args.length + 1];
-//		arguments[0] = "--noSplash";
-//		for (int i = 0; i < args.length; i++) {
-//			arguments[i + 1] = args[i];
-//		}
-//		launch(arguments);
-		launch(args);
+		String[] arguments = new String[args.length + 1];
+		arguments[0] = "--noSplash";
+		for (int i = 0; i < args.length; i++) {
+			arguments[i + 1] = args[i];
+		}
+		launch(arguments);
 	}
 
 	public void setupGame() {

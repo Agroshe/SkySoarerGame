@@ -1,10 +1,10 @@
-package com.github.hanyaeger.tutorial.Game.Entities.Buttons;
+package org.Game.Entities.Buttons;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.CompositeEntity;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import com.github.hanyaeger.api.userinput.MouseEnterListener;
 import com.github.hanyaeger.api.userinput.MouseExitListener;
-import com.github.hanyaeger.tutorial.Game.SkySourerGame;
+import org.Game.SkySourerGame;
 import javafx.scene.input.MouseButton;
 import javafx.scene.text.Text;
 

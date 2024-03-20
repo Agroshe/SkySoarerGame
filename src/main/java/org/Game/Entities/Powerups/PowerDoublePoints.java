@@ -1,11 +1,11 @@
-package com.github.hanyaeger.tutorial.Game.Entities.Powerups;
+package org.Game.Entities.Powerups;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.scenes.SceneBorder;
-import com.github.hanyaeger.tutorial.Game.Entities.Power;
-import com.github.hanyaeger.tutorial.Game.Scenes.GameScene;
-import com.github.hanyaeger.tutorial.Game.SkySourerGame;
+import org.Game.Entities.Power;
+import org.Game.Scenes.GameScene;
+import org.Game.SkySourerGame;
 
 import java.util.List;
 

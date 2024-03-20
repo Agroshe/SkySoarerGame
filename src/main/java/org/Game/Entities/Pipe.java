@@ -1,4 +1,4 @@
-package com.github.hanyaeger.tutorial.Game.Entities;
+package org.Game.Entities;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collider;

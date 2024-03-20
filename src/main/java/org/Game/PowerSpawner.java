@@ -1,4 +1,4 @@
-package com.github.hanyaeger.tutorial.Game;
+package org.Game;
 
 import com.github.hanyaeger.api.entities.EntitySpawner;
 

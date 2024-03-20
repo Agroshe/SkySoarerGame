@@ -1,7 +1,7 @@
-package com.github.hanyaeger.tutorial.Game.Scenes;
+package org.Game.Scenes;
 
 import com.github.hanyaeger.api.scenes.StaticScene;
-import com.github.hanyaeger.tutorial.Game.SkySourerGame;
+import org.Game.SkySourerGame;
 
 public class DeathScene extends StaticScene {
 

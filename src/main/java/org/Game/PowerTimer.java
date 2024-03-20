@@ -1,7 +1,7 @@
-package com.github.hanyaeger.tutorial.Game;
+package org.Game;
 
 import com.github.hanyaeger.api.Timer;
-import com.github.hanyaeger.tutorial.Game.Entities.Power;
+import org.Game.Entities.Power;
 
 public class PowerTimer extends Timer {
 

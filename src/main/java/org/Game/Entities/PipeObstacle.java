@@ -1,11 +1,11 @@
-package com.github.hanyaeger.tutorial.Game.Entities;
+package org.Game.Entities;
 
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.DynamicCompositeEntity;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.scenes.SceneBorder;
-import com.github.hanyaeger.tutorial.Game.SkySourerGame;
+import org.Game.SkySourerGame;
 
 public class PipeObstacle extends DynamicCompositeEntity implements SceneBorderCrossingWatcher {
 

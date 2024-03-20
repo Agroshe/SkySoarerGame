@@ -1,12 +1,12 @@
-package com.github.hanyaeger.tutorial.Game.Scenes;
+package org.Game.Scenes;
 
 
 import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
-import com.github.hanyaeger.tutorial.Game.Entities.SkySourer;
-import com.github.hanyaeger.tutorial.Game.PowerTimer;
-import com.github.hanyaeger.tutorial.Game.SkySourerGame;
+import org.Game.Entities.SkySourer;
+import org.Game.PowerTimer;
+import org.Game.SkySourerGame;
 
 public class GameScene extends DynamicScene implements EntitySpawnerContainer, TimerContainer {
 
