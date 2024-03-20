@@ -15,12 +15,7 @@ public class ButtonMainMenu extends Button {
     }
 
 	@Override
-	protected void setupEntities() {
-
-	}
-
-	@Override
 	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D) {
-
+		skySourerGame.setActiveScene(1);
 	}
 }
