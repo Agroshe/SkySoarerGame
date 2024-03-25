@@ -14,9 +14,6 @@ public class ButtonExit extends Button {
 		this.skySourerGame = skySourerGame;
     }
 
-	@Override
-	protected void setupEntities() {
-	}
 
 	@Override
 	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D) {

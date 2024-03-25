@@ -10,7 +10,7 @@ public class ButtonStartGame extends Button {
 	private SkySourerGame skySourerGame;
 
 	public ButtonStartGame(int width, int height, Coordinate2D location, SkySourerGame skySourerGame) {
-        super(width, height, location, "start game");
+        super(width, height, location, "Speel game");
 		this.skySourerGame = skySourerGame;
     }
 

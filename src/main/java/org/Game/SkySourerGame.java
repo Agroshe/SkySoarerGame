@@ -9,6 +9,7 @@ import org.Game.Scenes.StartScene;
 public class SkySourerGame extends YaegerGame {
 
 	private int Highscore;
+	private StartScene startScene;
 
 	public static void main(String[] args) {
 		String[] arguments = new String[args.length + 1];
@@ -21,12 +22,13 @@ public class SkySourerGame extends YaegerGame {
 
 	public void setupGame() {
 		setGameTitle("SkySourer");
-		setSize(new Size(900));
+		setSize(new Size(700));
 	}
 
 	public void setupScenes() {
-		addScene(0, new StartScene(this, 50, 150));
-		addScene(1, new GameScene(this, 50, 150));
+		startScene = new StartScene(this, 50, 150);
+		addScene(0, startScene);
+		addScene(1, new GameScene(this, startScene.getSpeed(), startScene.getGap()));
 		addScene(2, new DeathScene(this));
 	}
 
