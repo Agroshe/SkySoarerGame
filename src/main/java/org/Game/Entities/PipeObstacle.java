@@ -41,11 +41,11 @@ public class PipeObstacle extends DynamicCompositeEntity implements SceneBorderC
 	}
 
 	public void setSpeed(int gameSpeed) {
+		setMotion(gameSpeed, 270d);
 	}
 
 	@Override
 	public void notifyBoundaryCrossing(SceneBorder border) {
-		setAnchorLocationX(getSceneWidth());
-		setAnchorLocationY(new Random().nextInt((int) getSceneHeight()- 81));
+		//todo: remove this from the pipe list
 	}
 }

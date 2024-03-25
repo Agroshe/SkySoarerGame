@@ -25,7 +25,7 @@ public class SkySourerGame extends YaegerGame {
 	}
 
 	public void setupScenes() {
-		addScene(0, new GameScene(this, 0, 100));
+		addScene(0, new GameScene(this, 2, 100));
 		addScene(1, new StartScene(this, 5, 150));
 		addScene(2, new DeathScene(this));
 	}
