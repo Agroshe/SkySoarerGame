@@ -1,15 +1,15 @@
 package org.Game.Entities;
 
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.DynamicCompositeEntity;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import org.Game.SkySourerGame;
+import java.util.Random;
 
 public class PipeObstacle extends DynamicCompositeEntity implements SceneBorderCrossingWatcher {
-
-	private int hight;
 
 	private int gap;
 
@@ -21,20 +21,31 @@ public class PipeObstacle extends DynamicCompositeEntity implements SceneBorderC
 
 	private GapHitBox gapHitBox;
 
-	public PipeObstacle(int hight, int gameGap, SkySourerGame skySourerGame, int gameSpeed, Coordinate2D location) {
+	public PipeObstacle(int gameGap, SkySourerGame skySourerGame, int gameSpeed, Coordinate2D location) {
         super(location);
+		setMotion(gameSpeed, 270d);
+		this.gap = gameGap;
+		this.skySourerGame = skySourerGame;
     }
 
 	protected void setupEntities() {
-
+		bottomPipe = new Pipe(new Coordinate2D(0, 0 + (((double) gap) / 2)), "sprites/buis.png");
+		bottomPipe.setAnchorPoint(AnchorPoint.TOP_LEFT);
+		topPipe = new Pipe(new Coordinate2D(0,0 - (((double) gap) / 2)), "sprites/buis2.png");
+		topPipe.setAnchorPoint(AnchorPoint.BOTTOM_LEFT);
+		gapHitBox = new GapHitBox(new Coordinate2D(0,0), gap);
+		gapHitBox.setAnchorPoint(AnchorPoint.CENTER_RIGHT);
+		addEntity(bottomPipe);
+		addEntity(topPipe);
+		addEntity(gapHitBox);
 	}
 
 	public void setSpeed(int gameSpeed) {
-
 	}
 
 	@Override
 	public void notifyBoundaryCrossing(SceneBorder border) {
-
+		setAnchorLocationX(getSceneWidth());
+		setAnchorLocationY(new Random().nextInt((int) getSceneHeight()- 81));
 	}
 }

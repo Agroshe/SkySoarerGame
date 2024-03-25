@@ -3,4 +3,6 @@ module SkySoarerGame {
 
     exports org.Game;
 
+    opens sprites;
+
 }
