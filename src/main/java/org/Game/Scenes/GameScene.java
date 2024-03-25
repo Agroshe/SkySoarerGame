@@ -7,6 +7,7 @@ import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.Game.Entities.PipeObstacle;
 import org.Game.Entities.SkySourer;
+import org.Game.PipeSpawner;
 import org.Game.PowerTimer;
 import org.Game.SkySourerGame;
 
@@ -20,12 +21,14 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     private SkySourer skySourer;
     private PowerTimer[] powerTimer;
     private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
+    private PipeSpawner pipeSpawner;
 
 	public GameScene(SkySourerGame skySourerGame) {
 		this.skySourerGame = skySourerGame;
 	}
 
     public void setupScene() {
+        pipeSpawner = new PipeSpawner(0,0, 100,gameSpeed, gameGap);
 
     }
 
@@ -39,7 +42,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     }
 
     public void setupEntitySpawners() {
-
+        addEntitySpawner(pipeSpawner);
     }
 
     public void setCollision(boolean collision) {
