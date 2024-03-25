@@ -3,4 +3,7 @@ module SkySoarerGame {
 
     exports org.Game;
 
+    opens audio;
+    opens sprites;
+
 }

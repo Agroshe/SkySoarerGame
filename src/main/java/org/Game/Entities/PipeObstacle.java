@@ -26,7 +26,7 @@ public class PipeObstacle extends DynamicCompositeEntity implements SceneBorderC
     }
 
 	protected void setupEntities() {
-
+		bottomPipe = new Pipe(new Coordinate2D(getSceneHeight(), ))
 	}
 
 	public void setSpeed(int gameSpeed) {
