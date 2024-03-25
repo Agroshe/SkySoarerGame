@@ -11,18 +11,20 @@ import java.util.List;
 
 public class PowerDoublePoints extends Power {
 
-	protected PowerDoublePoints(Coordinate2D location, GameScene gameScene) {
-		super(location, gameScene.getGameSpeed(), gameScene, "todo");
-	}
+    protected PowerDoublePoints(Coordinate2D location, GameScene gameScene) {
+        super(location, gameScene.getGameSpeed(), gameScene, "sprites/doublePointsPowerup.png");
+    }
 
 
-	@Override
-	public void onCollision(List<Collider> collidingObjects) {
+    @Override
+    public void onCollision(List<Collider> collidingObjects) {
+        gameScene.setScoreMultiplier(2);
+        //todo : remove from powers list
+        //todo : start timer??
+    }
 
-	}
-
-	@Override
-	public void notifyBoundaryCrossing(SceneBorder border) {
-
-	}
+    @Override
+    public void notifyBoundaryCrossing(SceneBorder border) {
+        //todo : remove from powers list
+    }
 }

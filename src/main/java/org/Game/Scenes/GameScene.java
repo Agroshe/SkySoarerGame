@@ -10,58 +10,61 @@ import org.Game.Entities.SkySourer;
 import org.Game.PowerTimer;
 import org.Game.SkySourerGame;
 
+import java.util.ArrayList;
+
 public class GameScene extends DynamicScene implements EntitySpawnerContainer, TimerContainer {
 
-	private SkySourerGame skySourerGame;
+    private SkySourerGame skySourerGame;
+    private int gameSpeed;
+    private int gameGap;
+    private SkySourer skySourer;
+    private PowerTimer[] powerTimer;
+    private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
 
-	private int gameSpeed;
+    public GameScene(SkySourerGame skySourerGame, int gameSpeed, int gameGap) {
+        this.skySourerGame = skySourerGame;
+        this.gameSpeed = gameSpeed;
+        this.gameGap = gameGap;
+    }
 
-	private int gameGap;
+    public void setupScene() {
 
-	private SkySourer skySourer;
+    }
 
-	private PowerTimer[] powerTimer;
+    public void setupEntities() {
+        PipeObstacle pipeObstacle = new PipeObstacle(gameGap, skySourerGame, gameSpeed, new Coordinate2D(getWidth() / 2, getHeight() / 2));
+        addEntity(pipeObstacle);
+    }
 
-	public GameScene(SkySourerGame skySourerGame, int gameSpeed, int gameGap) {
-		this.skySourerGame = skySourerGame;
-		this.gameSpeed = gameSpeed;
-		this.gameGap = gameGap;
-	}
+    public int getScore() {
+        return 0;
+    }
 
-	public void setupScene() {
+    public void setupEntitySpawners() {
 
-	}
+    }
 
-	public void setupEntities() {
-		PipeObstacle pipeObstacle = new PipeObstacle(gameGap, skySourerGame, gameSpeed, new Coordinate2D(getWidth()/2,getHeight() / 2));
-		addEntity(pipeObstacle);
-	}
+    public void setCollision(boolean collision) {
+        skySourer.setCollision(collision);
+    }
 
-	public int getScore() {
-		return 0;
-	}
+    public void setScoreMultiplier(int scoreMultiplier) {
+        skySourer.setScoreMulitplier(scoreMultiplier);
+    }
 
-	public void setupEntitySpawners() {
+    public void setSpeed(int gameSpeed) {
+        this.gameSpeed = gameSpeed;
+        skySourer.setSpeed(gameSpeed);
+        for (PipeObstacle pipeObstacle : pipeObstacles) {
+            pipeObstacle.setSpeed(gameSpeed);
+        }
+    }
 
-	}
+    public void setupTimers() {
 
-	public void setCollision(boolean collision) {
+    }
 
-	}
-
-	public void setScoreMultiplier(int scoreMultiplier) {
-
-	}
-
-	public void setSpeed(int gameSpeed) {
-
-	}
-
-	public void setupTimers() {
-
-	}
-
-	public int getGameSpeed() {
-		return gameSpeed;
-	}
+    public int getGameSpeed() {
+        return gameSpeed;
+    }
 }
