@@ -6,7 +6,7 @@ import javafx.scene.input.MouseButton;
 
 public class ButtonExit extends Button {
 
-	private SkySourerGame skySourerGame;
+	private final SkySourerGame skySourerGame;
 
 
 	public ButtonExit(int width, int height, Coordinate2D location, SkySourerGame skySourerGame) {

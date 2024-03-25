@@ -6,7 +6,6 @@ import com.github.hanyaeger.api.userinput.MouseEnterListener;
 import com.github.hanyaeger.api.userinput.MouseExitListener;
 import org.Game.SkySourerGame;
 import javafx.scene.input.MouseButton;
-import javafx.scene.text.Text;
 
 
 public abstract class Button extends CompositeEntity implements MouseEnterListener, MouseExitListener, MouseButtonPressedListener {
@@ -44,7 +43,7 @@ public abstract class Button extends CompositeEntity implements MouseEnterListen
 				width,height,new Coordinate2D(0,0)
 		);
 		var knopText = new KnopText(
-				text
+				width, height, text
 		);
     }
 
