@@ -1,6 +1,8 @@
 package org.Game.Entities.Buttons;
 
 import com.github.hanyaeger.api.Coordinate2D;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import org.Game.SkySourerGame;
 import javafx.scene.input.MouseButton;
 

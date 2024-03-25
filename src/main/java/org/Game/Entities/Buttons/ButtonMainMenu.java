@@ -16,6 +16,6 @@ public class ButtonMainMenu extends Button {
 
 	@Override
 	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D) {
-		skySourerGame.setActiveScene(1);
+		skySourerGame.setActiveScene(0);
 	}
 }

@@ -18,12 +18,11 @@ public class StartScene extends StaticScene {
 	private int gameSpeed;
 
 	private int gameGap;
+	//private GameScene gameScene = new GameScene(skySourerGame);
 
 
-	public StartScene(SkySourerGame skySourerGame, int speed, int gap) {
+	public StartScene(SkySourerGame skySourerGame) {
 		this.skySourerGame = skySourerGame;
-        this.gameSpeed = speed;
-        this.gameGap = gap;
 	}
 
 	public void setupScene() {
@@ -31,6 +30,7 @@ public class StartScene extends StaticScene {
 	}
 
 	public void setupEntities() {
+
 		var exitButton = new ButtonExit(
 				35,35, new Coordinate2D(getWidth() - (double)35/2 , (double) 35 /2), skySourerGame
 		);

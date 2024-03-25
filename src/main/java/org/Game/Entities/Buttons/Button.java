@@ -29,6 +29,7 @@ public abstract class Button extends CompositeEntity implements MouseEnterListen
 		this.height = height;
 		this.text = text;
 
+
     }
 
 
