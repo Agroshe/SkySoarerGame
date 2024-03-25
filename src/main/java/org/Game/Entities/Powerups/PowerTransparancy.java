@@ -11,18 +11,19 @@ import java.util.List;
 
 public class PowerTransparancy extends Power {
 
-	public PowerTransparancy(Coordinate2D location, GameScene gameScene) {
-        super(location, gameScene.getGameSpeed(), gameScene, "todo");
+    public PowerTransparancy(Coordinate2D location, GameScene gameScene) {
+        super(location, gameScene.getGameSpeed(), gameScene, "sprites/transparencyPowerup.png");
     }
 
+    @Override
+    public void onCollision(List<Collider> collidingObjects) {
+        gameScene.setCollision(false);
+        //todo : remove from powers list
+        //todo : start timer??
+    }
 
-	@Override
-	public void onCollision(List<Collider> collidingObjects) {
-
-	}
-
-	@Override
-	public void notifyBoundaryCrossing(SceneBorder border) {
-
-	}
+    @Override
+    public void notifyBoundaryCrossing(SceneBorder border) {
+        //todo : remove from powers list
+    }
 }

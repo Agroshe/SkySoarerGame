@@ -11,18 +11,17 @@ import java.util.List;
 
 public class PowerVergroting extends Power {
 
-	public PowerVergroting(Coordinate2D location, GameScene gameScene) {
+    public PowerVergroting(Coordinate2D location, GameScene gameScene) {
         super(location, gameScene.getGameSpeed(), gameScene, "todo");
-
     }
 
-	@Override
-	public void onCollision(List<Collider> collidingObjects) {
+    @Override
+    public void onCollision(List<Collider> collidingObjects) {
+		//todo
+    }
 
-	}
-
-	@Override
-	public void notifyBoundaryCrossing(SceneBorder border) {
-
-	}
+    @Override
+    public void notifyBoundaryCrossing(SceneBorder border) {
+		//todo : remove from powers list
+    }
 }

@@ -10,63 +10,59 @@ import org.Game.Entities.SkySourer;
 import org.Game.PowerTimer;
 import org.Game.SkySourerGame;
 
+import java.util.ArrayList;
+
 public class GameScene extends DynamicScene implements EntitySpawnerContainer, TimerContainer {
 
-	private SkySourerGame skySourerGame;
-
-	private int gameSpeed;
-
-	private int gameGap;
-
-	private SkySourer skySourer;
-
-	private PowerTimer[] powerTimer;
-
+    private SkySourerGame skySourerGame;
+    private int gameSpeed;
+    private int gameGap;
+    private SkySourer skySourer;
+    private PowerTimer[] powerTimer;
+    private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
 
 	public GameScene(SkySourerGame skySourerGame) {
 		this.skySourerGame = skySourerGame;
-
 	}
 
-	public void setupScene() {
+    public void setupScene() {
 
-	}
+    }
 
-	public void setupEntities() {
-		PipeObstacle pipeObstacle = new PipeObstacle(gameGap, skySourerGame, gameSpeed, new Coordinate2D(getWidth()/2,getHeight() / 2));
-		addEntity(pipeObstacle);
-	}
+    public void setupEntities() {
+        PipeObstacle pipeObstacle = new PipeObstacle(gameGap, skySourerGame, gameSpeed, new Coordinate2D(getWidth() / 2, getHeight() / 2));
+        addEntity(pipeObstacle);
+    }
 
-	public int getScore() {
-		return 0;
-	}
+    public int getScore() {
+        return 0;
+    }
 
-	public void setupEntitySpawners() {
+    public void setupEntitySpawners() {
 
-	}
+    }
 
-	public void setCollision(boolean collision) {
+    public void setCollision(boolean collision) {
+        skySourer.setCollision(collision);
+    }
 
-	}
+    public void setScoreMultiplier(int scoreMultiplier) {
+        skySourer.setScoreMulitplier(scoreMultiplier);
+    }
 
-	public void setScoreMultiplier(int scoreMultiplier) {
+    public void setSpeed(int gameSpeed) {
+        this.gameSpeed = gameSpeed;
+        skySourer.setSpeed(gameSpeed);
+        for (PipeObstacle pipeObstacle : pipeObstacles) {
+            pipeObstacle.setSpeed(gameSpeed);
+        }
+    }
 
-	}
+    public void setupTimers() {
 
-	public void setSpeed(int speed) {
-		gameSpeed = speed;
-		System.out.println(gameSpeed);
-	}
+    }
 
-	public void setGap(int gap) {
-		gameGap = gap;
-	}
-
-	public void setupTimers() {
-
-	}
-
-	public int getGameSpeed() {
-		return gameSpeed;
-	}
+    public int getGameSpeed() {
+        return gameSpeed;
+    }
 }
