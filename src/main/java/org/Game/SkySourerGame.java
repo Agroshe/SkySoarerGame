@@ -26,10 +26,11 @@ public class SkySourerGame extends YaegerGame {
 	}
 
 	public void setupScenes() {
-		startScene = new StartScene(this, 50, 150);
+		startScene = new StartScene(this, 2, 150);
 		addScene(0, startScene);
 		addScene(1, new GameScene(this, startScene.getSpeed(), startScene.getGap()));
 		addScene(2, new DeathScene(this));
+
 	}
 
 	public void HandleDeath(int score) {

@@ -21,6 +21,5 @@ public class ButtonSpeed extends Button {
 	@Override
 	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D) {
 		startScene.setSpeed(speed);
-
 	}
 }

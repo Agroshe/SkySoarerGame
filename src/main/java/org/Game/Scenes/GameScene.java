@@ -22,10 +22,8 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
 	private PowerTimer[] powerTimer;
 
-	public GameScene(SkySourerGame skySourerGame, int gameSpeed, int gameGap) {
+	public GameScene(SkySourerGame skySourerGame) {
 		this.skySourerGame = skySourerGame;
-		this.gameSpeed = gameSpeed;
-		this.gameGap = gameGap;
 	}
 
 	public void setupScene() {
