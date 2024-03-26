@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class GameScene extends DynamicScene implements EntitySpawnerContainer, TimerContainer {
 
     private SkySourerGame skySourerGame;
-    private int gameSpeed = 2; //todo: should be set to slow
-    private int gameGap = 150; //todo: should be set to easy
+    private int gameSpeed;
+    private int gameGap;
     private SkySourer skySourer;
     private PowerTimer[] powerTimer;
     private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
@@ -30,7 +30,9 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 	}
 
     public void setupScene() {
-        pipeSpawner = new PipeSpawner(getHeight(),getWidth(), 1000 ,gameSpeed, gameGap);
+        pipeSpawner = new PipeSpawner(getHeight(),getWidth(), 1000,gameSpeed, gameGap);
+        gameSpeed = (int)(getWidth() * 0.005);
+        gameGap = (int)(getHeight() * 0.357);
     }
 
     public void setupEntities() {

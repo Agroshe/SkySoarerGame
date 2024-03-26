@@ -12,7 +12,6 @@ import org.Game.Scenes.GameScene;
 import java.util.List;
 
 public abstract class Power extends DynamicSpriteEntity implements Collided, SceneBorderCrossingWatcher {
-
 	protected int hight;
 
 	protected int width;
