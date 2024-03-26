@@ -20,6 +20,7 @@ public class SkySourer extends DynamicSpriteEntity implements KeyListener, Scene
     private int scoreMultiplier;
     private SkySourerGame skySourerGame;
     private ScoreText scoreText;
+    private long previousMillis = 0;
 
     public SkySourer(Coordinate2D location, ScoreText scoreText, SkySourerGame skySourerGame) {
         super("sprites/FlappyBird.png", location, new Size(50));
@@ -28,7 +29,7 @@ public class SkySourer extends DynamicSpriteEntity implements KeyListener, Scene
         collision = true;
         score = 0;
         scoreMultiplier = 1;
-        setGravityConstant(0.05);
+        setGravityConstant(0.07);
     }
 
 
@@ -36,7 +37,8 @@ public class SkySourer extends DynamicSpriteEntity implements KeyListener, Scene
         for (Collider collider : collidingObjects) {
             if (collider instanceof Pipe && collision) {
                 skySourerGame.handleDeath(score);
-            } else if (collider instanceof GapHitBox) {
+            } else if (collider instanceof GapHitBox && System.currentTimeMillis() - 300 >= previousMillis) {
+                previousMillis = System.currentTimeMillis();
                 score += scoreMultiplier;
                 scoreText.setScoreText(score);
             }
@@ -46,11 +48,11 @@ public class SkySourer extends DynamicSpriteEntity implements KeyListener, Scene
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         if (pressedKeys.contains(KeyCode.SPACE)) {
-            setMotion(3, 180);
+            setMotion(4.5, 180);
         } else if (pressedKeys.contains(KeyCode.UP)) {
-            setMotion(3, 180);
+            setMotion(4.5, 180);
         } else if (pressedKeys.contains(KeyCode.W)) {
-            setMotion(3, 180);
+            setMotion(4.5, 180);
         }
     }
 
@@ -68,6 +70,17 @@ public class SkySourer extends DynamicSpriteEntity implements KeyListener, Scene
 
     @Override
     public void notifyBoundaryTouching(SceneBorder border) {
-
+//        setSpeed(0);
+//        switch (border) {
+//            case TOP:
+//                setMotion(4.5, 180);
+//                break;
+//            case LEFT:
+//                setMotion(4.5, 180);
+//                break;
+//            case RIGHT:
+//                setMotion(4.5, 180);
+//                break;
+//        }
     }
 }

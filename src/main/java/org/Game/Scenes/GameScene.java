@@ -34,7 +34,9 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     }
 
     public void setupEntities() {
-        skySourer = new SkySourer(new Coordinate2D(150, getHeight()/2 ), new ScoreText(new Coordinate2D(getWidth() / 2, 0)), skySourerGame);
+        ScoreText scoreText = new ScoreText(new Coordinate2D(getWidth() / 2, 0));
+        skySourer = new SkySourer(new Coordinate2D(150, getHeight()/2 ), scoreText, skySourerGame);
+        addEntity(scoreText);
         addEntity(skySourer);
     }
 

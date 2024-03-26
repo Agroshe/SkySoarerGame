@@ -5,11 +5,12 @@ import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.DynamicCompositeEntity;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
+import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import org.Game.SkySourerGame;
 import java.util.Random;
 
-public class PipeObstacle extends DynamicCompositeEntity implements SceneBorderCrossingWatcher {
+public class PipeObstacle extends DynamicCompositeEntity implements SceneBorderCrossingWatcher{
 
 	private int gap;
 
@@ -29,9 +30,9 @@ public class PipeObstacle extends DynamicCompositeEntity implements SceneBorderC
     }
 
 	protected void setupEntities() {
-		bottomPipe = new Pipe(new Coordinate2D(0, 0 + (((double) gap) / 2)), "sprites/buis.png");
+		bottomPipe = new Pipe(new Coordinate2D(0, 0 + (((double) gap) / 2)), "sprites/buisje.png");
 		bottomPipe.setAnchorPoint(AnchorPoint.TOP_LEFT);
-		topPipe = new Pipe(new Coordinate2D(0,0 - (((double) gap) / 2)), "sprites/buis2.png");
+		topPipe = new Pipe(new Coordinate2D(0,0 - (((double) gap) / 2)), "sprites/buisje2.png");
 		topPipe.setAnchorPoint(AnchorPoint.BOTTOM_LEFT);
 		gapHitBox = new GapHitBox(new Coordinate2D(0,0), gap);
 		gapHitBox.setAnchorPoint(AnchorPoint.CENTER_RIGHT);
@@ -46,6 +47,6 @@ public class PipeObstacle extends DynamicCompositeEntity implements SceneBorderC
 
 	@Override
 	public void notifyBoundaryCrossing(SceneBorder border) {
-		//todo: remove this from the pipe list
+		this.remove();
 	}
 }

@@ -28,7 +28,7 @@ public class PipeSpawner extends EntitySpawner {
 
     @Override
     protected void spawnEntities() {
-        var pipeObstacle = new PipeObstacle(gameGap, skySourerGame, gameSpeed, new Coordinate2D(sceneWidth, sceneHight / 2));
+        var pipeObstacle = new PipeObstacle(gameGap, skySourerGame, gameSpeed, new Coordinate2D(sceneWidth - 1, ((Math.random() * ((sceneHight - 200) - 200)) + 200)));
         spawn(pipeObstacle);
     }
 }
