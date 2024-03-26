@@ -18,11 +18,12 @@ public class StartScene extends StaticScene {
 	private int gameSpeed;
 
 	private int gameGap;
-	//private GameScene gameScene = new GameScene(skySourerGame);
+	private GameScene gameScene;
 
 
-	public StartScene(SkySourerGame skySourerGame) {
+	public StartScene(SkySourerGame skySourerGame, GameScene gameScene) {
 		this.skySourerGame = skySourerGame;
+		this.gameScene = gameScene;
 	}
 
 	public void setupScene() {
@@ -83,11 +84,11 @@ public class StartScene extends StaticScene {
 	}
 
 	public void setSpeed(int speed) {
-		gameSpeed = speed;
+		gameScene.setSpeed(speed);
 	}
 
 	public void setGap(int gap) {
-		gameGap = gap;
+		gameScene.setGap(gap);
 	}
 
 	public int getSpeed() {

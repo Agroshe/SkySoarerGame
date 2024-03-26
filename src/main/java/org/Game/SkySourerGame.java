@@ -6,10 +6,13 @@ import org.Game.Scenes.DeathScene;
 import org.Game.Scenes.GameScene;
 import org.Game.Scenes.StartScene;
 
+import java.util.Scanner;
+
 public class SkySourerGame extends YaegerGame {
 
 	private int Highscore;
 	private StartScene startScene;
+	private GameScene gameScene;
 
 	public static void main(String[] args) {
 		String[] arguments = new String[args.length + 1];
@@ -26,9 +29,11 @@ public class SkySourerGame extends YaegerGame {
 	}
 
 	public void setupScenes() {
-		startScene = new StartScene(this);
+		gameScene = new GameScene(this);
+		startScene = new StartScene(this, gameScene);
+
 		addScene(0, startScene);
-		addScene(1, new GameScene(this));
+		addScene(1, gameScene);
 		addScene(2, new DeathScene(this));
 
 	}
@@ -42,7 +47,7 @@ public class SkySourerGame extends YaegerGame {
 	}
 
 	public void getHighscoreFromFile() {
-
+		String text = new Scanner(AppropriateClass.class.getResourceAsStream("highScore/highScore.txt"), "UTF-8").useDelimiter("\\A").next();
 	}
 
 	public void setHighscoreInFile() {

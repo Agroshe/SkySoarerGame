@@ -1,11 +1,13 @@
 package org.Game.Scenes;
 
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.Game.Entities.PipeObstacle;
+import org.Game.Entities.ScoreText;
 import org.Game.Entities.SkySourer;
 import org.Game.PipeSpawner;
 import org.Game.PowerTimer;
@@ -28,8 +30,10 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 	}
 
     public void setupScene() {
+        ScoreText scoreText = new ScoreText(new Coordinate2D(getWidth() / 2, 0));
+        scoreText.setAnchorPoint(AnchorPoint.TOP_CENTER);
         pipeSpawner = new PipeSpawner(0,0, 100,gameSpeed, gameGap);
-
+        skySourer = new SkySourer(new Coordinate2D(getWidth() /2, getHeight()/2 ), scoreText, skySourerGame);
     }
 
     public void setupEntities() {
@@ -38,7 +42,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     }
 
     public int getScore() {
-        return 0;
+        return skySourerGame.getScore();
     }
 
     public void setupEntitySpawners() {
@@ -55,10 +59,16 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     public void setSpeed(int gameSpeed) {
         this.gameSpeed = gameSpeed;
+        System.out.println(gameSpeed);
         skySourer.setSpeed(gameSpeed);
         for (PipeObstacle pipeObstacle : pipeObstacles) {
             pipeObstacle.setSpeed(gameSpeed);
         }
+    }
+
+    public void setGap(int gameGap) {
+        System.out.println(gameGap);
+        this.gameGap = gameGap;
     }
 
     public void setupTimers() {
@@ -68,4 +78,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     public int getGameSpeed() {
         return gameSpeed;
     }
+
+
+
 }
