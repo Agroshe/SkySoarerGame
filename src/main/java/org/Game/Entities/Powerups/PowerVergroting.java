@@ -17,11 +17,11 @@ public class PowerVergroting extends Power {
 
     @Override
     public void onCollision(List<Collider> collidingObjects) {
-		//todo
+        //todo
     }
 
     @Override
     public void notifyBoundaryCrossing(SceneBorder border) {
-		//todo : remove from powers list
+        //todo : remove from powers list
     }
 }

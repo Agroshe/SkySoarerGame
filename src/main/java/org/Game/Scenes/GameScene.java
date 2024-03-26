@@ -1,7 +1,6 @@
 package org.Game.Scenes;
 
 
-import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.TimerContainer;
@@ -18,30 +17,32 @@ import java.util.ArrayList;
 public class GameScene extends DynamicScene implements EntitySpawnerContainer, TimerContainer {
 
     private SkySourerGame skySourerGame;
-    private int gameSpeed = 2; //todo: should be set to slow
-    private int gameGap = 150; //todo: should be set to easy
+    private double gameSpeed;
+    private int gameGap;
     private SkySourer skySourer;
     private PowerTimer[] powerTimer;
     private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
     private PipeSpawner pipeSpawner;
 
-	public GameScene(SkySourerGame skySourerGame) {
-		this.skySourerGame = skySourerGame;
-	}
+    public GameScene(SkySourerGame skySourerGame, double sceneHeight) {
+        this.skySourerGame = skySourerGame;
+        gameGap = (int) (sceneHeight * 0.4);
+        gameSpeed = 2;
+    }
 
     public void setupScene() {
-        pipeSpawner = new PipeSpawner(getHeight(),getWidth(), 1000 ,gameSpeed, gameGap);
+        pipeSpawner = new PipeSpawner(getHeight(), getWidth(), (int) (2000 / gameSpeed), gameSpeed, gameGap);
     }
 
     public void setupEntities() {
         ScoreText scoreText = new ScoreText(new Coordinate2D(getWidth() / 2, 0));
-        skySourer = new SkySourer(new Coordinate2D(150, getHeight()/2 ), scoreText, skySourerGame);
+        skySourer = new SkySourer(new Coordinate2D(getWidth() * 0.15, getHeight() / 2), scoreText, skySourerGame, getHeight());
         addEntity(scoreText);
         addEntity(skySourer);
     }
 
     public int getScore() {
-        return skySourerGame.getScore();
+        return skySourer.getScore();
     }
 
     public void setupEntitySpawners() {
@@ -56,7 +57,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
         skySourer.setScoreMultiplier(scoreMultiplier);
     }
 
-    public void setSpeed(int gameSpeed) {
+    public void setSpeed(double gameSpeed) {
         this.gameSpeed = gameSpeed;
     }
 
@@ -68,7 +69,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     }
 
-    public int getGameSpeed() {
+    public double getGameSpeed() {
         return gameSpeed;
     }
 }

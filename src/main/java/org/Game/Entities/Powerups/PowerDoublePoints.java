@@ -5,7 +5,6 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import org.Game.Entities.Power;
 import org.Game.Scenes.GameScene;
-import org.Game.SkySourerGame;
 
 import java.util.List;
 
