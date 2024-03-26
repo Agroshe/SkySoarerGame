@@ -34,8 +34,6 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     }
 
     public void setupEntities() {
-        PipeObstacle pipeObstacle = new PipeObstacle(gameGap, skySourerGame, gameSpeed, new Coordinate2D(getWidth() / 2, getHeight() / 2));
-        addEntity(pipeObstacle);
         skySourer = new SkySourer(new Coordinate2D(150, getHeight()/2 ), new ScoreText(new Coordinate2D(getWidth() / 2, 0)), skySourerGame);
         addEntity(skySourer);
     }
@@ -58,10 +56,6 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     public void setSpeed(int gameSpeed) {
         this.gameSpeed = gameSpeed;
-        skySourer.setSpeed(gameSpeed);
-        for (PipeObstacle pipeObstacle : pipeObstacles) {
-            pipeObstacle.setSpeed(gameSpeed);
-        }
     }
 
     public void setGap(int gameGap) {
