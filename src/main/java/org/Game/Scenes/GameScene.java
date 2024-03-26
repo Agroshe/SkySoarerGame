@@ -30,15 +30,16 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 	}
 
     public void setupScene() {
-        ScoreText scoreText = new ScoreText(new Coordinate2D(getWidth() / 2, 0));
-        scoreText.setAnchorPoint(AnchorPoint.TOP_CENTER);
         pipeSpawner = new PipeSpawner(getHeight(),getWidth(), 2000,gameSpeed, gameGap);
-        skySourer = new SkySourer(new Coordinate2D(getWidth() /2, getHeight()/2 ), scoreText, skySourerGame);
     }
 
     public void setupEntities() {
         PipeObstacle pipeObstacle = new PipeObstacle(gameGap, skySourerGame, gameSpeed, new Coordinate2D(getWidth() / 2, getHeight() / 2));
+        ScoreText scoreText = new ScoreText(new Coordinate2D(getWidth() / 2, 0));
+        scoreText.setAnchorPoint(AnchorPoint.TOP_CENTER);
+        skySourer = new SkySourer(new Coordinate2D(getWidth() /2, getHeight()/2 ), scoreText, skySourerGame);
         addEntity(pipeObstacle);
+        addEntity(skySourer);
     }
 
     public int getScore() {
@@ -54,7 +55,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     }
 
     public void setScoreMultiplier(int scoreMultiplier) {
-        skySourer.setScoreMulitplier(scoreMultiplier);
+        skySourer.setScoreMultiplier(scoreMultiplier);
     }
 
     public void setSpeed(int gameSpeed) {

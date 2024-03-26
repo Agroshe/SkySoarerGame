@@ -38,7 +38,7 @@ public class SkySourerGame extends YaegerGame {
 
 	}
 
-	public void HandleDeath(int score) {
+	public void handleDeath(int score) {
 
 	}
 
@@ -47,7 +47,7 @@ public class SkySourerGame extends YaegerGame {
 	}
 
 	public void getHighscoreFromFile() {
-		String text = new Scanner(AppropriateClass.class.getResourceAsStream("highScore/highScore.txt"), "UTF-8").useDelimiter("\\A").next();
+		//String text = new Scanner(AppropriateClass.class.getResourceAsStream("highScore/highScore.txt"), "UTF-8").useDelimiter("\\A").next();
 	}
 
 	public void setHighscoreInFile() {
