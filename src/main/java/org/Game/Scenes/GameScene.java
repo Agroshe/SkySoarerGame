@@ -1,12 +1,11 @@
 package org.Game.Scenes;
 
 
-import com.github.hanyaeger.api.AnchorPoint;
-import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.EntitySpawnerContainer;
-import com.github.hanyaeger.api.TimerContainer;
+import com.github.hanyaeger.api.*;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.Game.Entities.PipeObstacle;
+import org.Game.Entities.Power;
+import org.Game.Entities.Powerups.PowerDoublePoints;
 import org.Game.Entities.ScoreText;
 import org.Game.Entities.SkySourer;
 import org.Game.PipeSpawner;
@@ -22,7 +21,9 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     private double gameSpeed;
     private int gameGap;
     private SkySourer skySourer;
-    private PowerTimer[] powerTimer;
+    private Timer powerTimer;
+    private PowerDoublePoints dubblePoints;
+
     private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
     private PipeSpawner pipeSpawner;
 
@@ -49,6 +50,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     public void setupEntitySpawners() {
         addEntitySpawner(pipeSpawner);
+
     }
 
     public void setCollision(boolean collision) {
@@ -68,10 +70,10 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     }
 
     public void setupTimers() {
-
+        powerTimer = new PowerTimer(dubblePoints,this);
     }
 
-    public int getGameSpeed() {
+    public double getGameSpeed() {
         return gameSpeed;
     }
 }
