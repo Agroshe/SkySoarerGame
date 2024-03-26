@@ -6,6 +6,7 @@ import org.Game.Scenes.DeathScene;
 import org.Game.Scenes.GameScene;
 import org.Game.Scenes.StartScene;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class SkySourerGame extends YaegerGame {
@@ -47,7 +48,17 @@ public class SkySourerGame extends YaegerGame {
 	}
 
 	public void getHighscoreFromFile() {
-		//String text = new Scanner(AppropriateClass.class.getResourceAsStream("highScore/highScore.txt"), "UTF-8").useDelimiter("\\A").next();
+		InputStream inputStream = SkySourerGame.class.getResourceAsStream("/highScore.txt");
+		if (inputStream != null) {
+			try (Scanner scanner = new Scanner(inputStream)) {
+				// Het lezen van de enkele regel van het bestand
+				String highScoreText = scanner.nextLine();
+				System.out.println("Inhoud van highScore.txt:");
+				System.out.println(highScoreText);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public void setHighscoreInFile() {

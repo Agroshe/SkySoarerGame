@@ -35,10 +35,8 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     public void setupEntities() {
         PipeObstacle pipeObstacle = new PipeObstacle(gameGap, skySourerGame, gameSpeed, new Coordinate2D(getWidth() / 2, getHeight() / 2));
-        ScoreText scoreText = new ScoreText(new Coordinate2D(getWidth() / 2, 0));
-        scoreText.setAnchorPoint(AnchorPoint.TOP_CENTER);
-        skySourer = new SkySourer(new Coordinate2D(getWidth() /2, getHeight()/2 ), scoreText, skySourerGame);
         addEntity(pipeObstacle);
+        skySourer = new SkySourer(new Coordinate2D(150, getHeight()/2 ), new ScoreText(new Coordinate2D(getWidth() / 2, 0)), skySourerGame);
         addEntity(skySourer);
     }
 
