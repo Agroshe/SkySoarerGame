@@ -7,15 +7,15 @@ import javafx.scene.input.MouseButton;
 
 public class ButtonMainMenu extends Button {
 
-	private SkySourerGame skySourerGame;
+    private SkySourerGame skySourerGame;
 
     public ButtonMainMenu(int width, int height, Coordinate2D location, String text, SkySourerGame skySourerGame) {
         super(width, height, location, text);
         this.skySourerGame = skySourerGame;
     }
 
-	@Override
-	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D) {
-		skySourerGame.setActiveScene(0);
-	}
+    @Override
+    public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D) {
+        skySourerGame.setActiveScene(0);
+    }
 }

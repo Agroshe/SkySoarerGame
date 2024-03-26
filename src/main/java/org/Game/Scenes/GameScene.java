@@ -18,7 +18,8 @@ import java.util.ArrayList;
 public class GameScene extends DynamicScene implements EntitySpawnerContainer, TimerContainer {
 
     private SkySourerGame skySourerGame;
-    private int gameSpeed;
+    //private int gameSpeed;
+    private double gameSpeed;
     private int gameGap;
     private SkySourer skySourer;
     private PowerTimer[] powerTimer;
@@ -37,13 +38,13 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     public void setupEntities() {
         ScoreText scoreText = new ScoreText(new Coordinate2D(getWidth() / 2, 0));
-        skySourer = new SkySourer(new Coordinate2D(150, getHeight()/2 ), scoreText, skySourerGame);
+        skySourer = new SkySourer(new Coordinate2D(getWidth() * 0.15, getHeight() / 2), scoreText, skySourerGame, getHeight());
         addEntity(scoreText);
         addEntity(skySourer);
     }
 
     public int getScore() {
-        return skySourerGame.getScore();
+        return skySourer.getScore();
     }
 
     public void setupEntitySpawners() {
@@ -58,7 +59,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
         skySourer.setScoreMultiplier(scoreMultiplier);
     }
 
-    public void setSpeed(int gameSpeed) {
+    public void setSpeed(double gameSpeed) {
         this.gameSpeed = gameSpeed;
     }
 

@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 
 public class KnopBox extends RectangleEntity {
 
-	public KnopBox(int width, int height, Coordinate2D location) {
+    public KnopBox(int width, int height, Coordinate2D location) {
         super(location);
         setWidth(width);
         setHeight(height);
