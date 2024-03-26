@@ -1,7 +1,9 @@
 package org.Game.Scenes;
 
 
-import com.github.hanyaeger.api.*;
+import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.EntitySpawnerContainer;
+import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.Game.Entities.PipeObstacle;
 import org.Game.Entities.Power;
@@ -17,7 +19,6 @@ import java.util.ArrayList;
 public class GameScene extends DynamicScene implements EntitySpawnerContainer, TimerContainer {
 
     private SkySourerGame skySourerGame;
-    //private int gameSpeed;
     private double gameSpeed;
     private int gameGap;
     private SkySourer skySourer;
@@ -27,14 +28,14 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
     private PipeSpawner pipeSpawner;
 
-	public GameScene(SkySourerGame skySourerGame) {
-		this.skySourerGame = skySourerGame;
-	}
+    public GameScene(SkySourerGame skySourerGame, double sceneHeight) {
+        this.skySourerGame = skySourerGame;
+        gameGap = (int) (sceneHeight * 0.4);
+        gameSpeed = 2;
+    }
 
     public void setupScene() {
-        pipeSpawner = new PipeSpawner(getHeight(),getWidth(), 1000,gameSpeed, gameGap);
-        gameSpeed = (int)(getWidth() * 0.005);
-        gameGap = (int)(getHeight() * 0.357);
+        pipeSpawner = new PipeSpawner(getHeight(), getWidth(), (int) (2000 / gameSpeed), gameSpeed, gameGap);
     }
 
     public void setupEntities() {
@@ -50,7 +51,6 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     public void setupEntitySpawners() {
         addEntitySpawner(pipeSpawner);
-
     }
 
     public void setCollision(boolean collision) {
@@ -70,7 +70,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     }
 
     public void setupTimers() {
-        powerTimer = new PowerTimer(dubblePoints,this);
+        //powerTimer = new PowerTimer(dubblePoints,this);
     }
 
     public double getGameSpeed() {

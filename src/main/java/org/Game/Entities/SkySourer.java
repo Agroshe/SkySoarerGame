@@ -21,17 +21,15 @@ public class SkySourer extends DynamicSpriteEntity implements KeyListener, Scene
     private SkySourerGame skySourerGame;
     private ScoreText scoreText;
     private long previousMillis = 0;
-    private double sceneHeight;
 
-    public SkySourer(Coordinate2D location, ScoreText scoreText, SkySourerGame skySourerGame, double sceneHeight) {
-        super("sprites/FlappyBird.png", location, new Size(sceneHeight * 0.083));
+    public SkySourer(Coordinate2D location, ScoreText scoreText, SkySourerGame skySourerGame) {
+        super("sprites/FlappyBird.png", location, new Size(50));
         this.scoreText = scoreText;
         this.skySourerGame = skySourerGame;
         collision = true;
         score = 0;
         scoreMultiplier = 1;
-        this.sceneHeight = sceneHeight;
-        setGravityConstant(sceneHeight * 0.000118);
+        setGravityConstant(0.07);
     }
 
 
@@ -50,11 +48,11 @@ public class SkySourer extends DynamicSpriteEntity implements KeyListener, Scene
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         if (pressedKeys.contains(KeyCode.SPACE)) {
-            setMotion(sceneHeight * 0.0075, 180);
+            setMotion(4.5, 180);
         } else if (pressedKeys.contains(KeyCode.UP)) {
-            setMotion(sceneHeight * 0.0075, 180);
+            setMotion(4.5, 180);
         } else if (pressedKeys.contains(KeyCode.W)) {
-            setMotion(sceneHeight * 0.0075, 180);
+            setMotion(4.5, 180);
         }
     }
 

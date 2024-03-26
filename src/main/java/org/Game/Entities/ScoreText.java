@@ -7,14 +7,14 @@ import com.github.hanyaeger.api.entities.impl.TextEntity;
 
 public class ScoreText extends TextEntity {
 
-    public ScoreText(Coordinate2D location) {
+	public ScoreText(Coordinate2D location) {
         super(location);
-        setAnchorPoint(AnchorPoint.TOP_CENTER);
-        setScoreText(0);
+		setAnchorPoint(AnchorPoint.TOP_CENTER);
+		setScoreText(0);
     }
 
-    public void setScoreText(int score) {
-        setText("Score: " + score);
-    }
+	public void setScoreText(int score) {
+		setText("Score: " + score);
+	}
 
 }

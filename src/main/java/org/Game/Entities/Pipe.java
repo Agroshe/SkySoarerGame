@@ -8,8 +8,8 @@ import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 
 public class Pipe extends SpriteEntity implements Collider {
 
-	public Pipe(Coordinate2D location, String fileName, double sceneHight) {
-        super(fileName, location, new Size(0, sceneHight));
+	public Pipe(Coordinate2D location, String fileName) {
+        super(fileName, location, new Size(0,600));
     }
 
 }

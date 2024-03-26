@@ -29,7 +29,7 @@ public class DeathScene extends StaticScene {
 				new Coordinate2D(getWidth() /2 ,100), "Score");
 
 		var textLastScore = new TextEntity(
-				new Coordinate2D(getWidth() /2 ,183), "" + skySourerGame.getScore());
+				new Coordinate2D(getWidth() /2 ,183), "85198");
 
 		var rectangleScore = new TextBox(
 				150, 60, new Coordinate2D(getWidth() /2 ,183));
@@ -38,7 +38,7 @@ public class DeathScene extends StaticScene {
 				new Coordinate2D(getWidth() /2 ,350), "Highscore");
 
 		var textHighesScore = new TextEntity(
-				new Coordinate2D(getWidth() /2 ,400), "" + skySourerGame.getHighscore());
+				new Coordinate2D(getWidth() /2 ,400), "1774232");
 
 		var rectangleHighScore = new TextBox(
 				150, 60, new Coordinate2D(getWidth() /2 ,400));

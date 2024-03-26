@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 
 public class GapHitBox extends RectangleEntity implements Collider {
 
-    public GapHitBox(Coordinate2D location, int gap) {
+	public GapHitBox(Coordinate2D location, int gap) {
         super(location);
         setWidth(2);
         setHeight(gap);
