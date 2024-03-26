@@ -5,14 +5,14 @@ import org.Game.Entities.Power;
 
 public class PowerTimer extends Timer {
 
-	private Power power;
+    private Power power;
 
-	protected PowerTimer(long intervalInMs) {
-		super(intervalInMs);
-	}
+    protected PowerTimer(long intervalInMs) {
+        super(intervalInMs);
+    }
 
-	public void onAnimationUpdate(long timeStamp) {
+    public void onAnimationUpdate(long timeStamp) {
 
-	}
+    }
 
 }
