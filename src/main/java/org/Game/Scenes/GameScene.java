@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class GameScene extends DynamicScene implements EntitySpawnerContainer, TimerContainer {
 
     private SkySourerGame skySourerGame;
-    private int gameSpeed;
-    private int gameGap;
+    private int gameSpeed = 2; //todo: should be set to slow
+    private int gameGap = 150; //todo: should be set to easy
     private SkySourer skySourer;
     private PowerTimer[] powerTimer;
     private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
@@ -32,7 +32,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     public void setupScene() {
         ScoreText scoreText = new ScoreText(new Coordinate2D(getWidth() / 2, 0));
         scoreText.setAnchorPoint(AnchorPoint.TOP_CENTER);
-        pipeSpawner = new PipeSpawner(0,0, 100,gameSpeed, gameGap);
+        pipeSpawner = new PipeSpawner(getHeight(),getWidth(), 2000,gameSpeed, gameGap);
         skySourer = new SkySourer(new Coordinate2D(getWidth() /2, getHeight()/2 ), scoreText, skySourerGame);
     }
 
@@ -59,7 +59,6 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     public void setSpeed(int gameSpeed) {
         this.gameSpeed = gameSpeed;
-        System.out.println(gameSpeed);
         skySourer.setSpeed(gameSpeed);
         for (PipeObstacle pipeObstacle : pipeObstacles) {
             pipeObstacle.setSpeed(gameSpeed);
@@ -67,7 +66,6 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     }
 
     public void setGap(int gameGap) {
-        System.out.println(gameGap);
         this.gameGap = gameGap;
     }
 
@@ -78,7 +76,4 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     public int getGameSpeed() {
         return gameSpeed;
     }
-
-
-
 }
