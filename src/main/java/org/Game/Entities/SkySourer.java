@@ -70,17 +70,14 @@ public class SkySourer extends DynamicSpriteEntity implements KeyListener, Scene
 
     @Override
     public void notifyBoundaryTouching(SceneBorder border) {
-//        setSpeed(0);
-//        switch (border) {
-//            case TOP:
-//                setMotion(4.5, 180);
-//                break;
-//            case LEFT:
-//                setMotion(4.5, 180);
-//                break;
-//            case RIGHT:
-//                setMotion(4.5, 180);
-//                break;
-//        }
+        setSpeed(0);
+        switch (border) {
+            case BOTTOM:
+                setAnchorLocationY(getSceneHeight() - getHeight() - 1);
+                break;
+            case TOP:
+                setAnchorLocationY(1);
+                break;
+        }
     }
 }

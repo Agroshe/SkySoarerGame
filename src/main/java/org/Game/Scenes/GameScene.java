@@ -30,7 +30,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 	}
 
     public void setupScene() {
-        pipeSpawner = new PipeSpawner(getHeight(),getWidth(), 2000,gameSpeed, gameGap);
+        pipeSpawner = new PipeSpawner(getHeight(),getWidth(), 1000 ,gameSpeed, gameGap);
     }
 
     public void setupEntities() {

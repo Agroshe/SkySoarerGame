@@ -31,7 +31,7 @@ public class SkySourerGame extends YaegerGame {
 
 	public void setupGame() {
 		setGameTitle("SkySourer");
-		setSize(new Size(700));
+		setSize(new Size(1500, 600));
 		getHighscoreFromFile();
 
 	}
