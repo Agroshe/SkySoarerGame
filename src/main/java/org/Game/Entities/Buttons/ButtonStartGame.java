@@ -9,15 +9,15 @@ import javafx.scene.input.MouseButton;
 
 public class ButtonStartGame extends Button {
 
-	private SkySourerGame skySourerGame;
+    private SkySourerGame skySourerGame;
 
-	public ButtonStartGame(int width, int height, Coordinate2D location, SkySourerGame skySourerGame) {
+    public ButtonStartGame(int width, int height, Coordinate2D location, SkySourerGame skySourerGame) {
         super(width, height, location, "Speel game");
-		this.skySourerGame = skySourerGame;
+        this.skySourerGame = skySourerGame;
     }
 
-	@Override
-	public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D) {
-		skySourerGame.setActiveScene(1);
-	}
+    @Override
+    public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D) {
+        skySourerGame.setActiveScene(1);
+    }
 }

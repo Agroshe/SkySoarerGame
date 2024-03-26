@@ -21,15 +21,15 @@ public class PowerTimer extends Timer {
     }
 
     public void onAnimationUpdate(long timeStamp) {
-        if(power instanceof PowerDoublePoints){
+        if (power instanceof PowerDoublePoints) {
             gameScene.setScoreMultiplier(1);
             this.remove();
         }
-        if(power instanceof PowerTransparancy) {
+        if (power instanceof PowerTransparancy) {
             gameScene.setCollision(true);
             this.remove();
         }
-        if(power instanceof PowerSpeed){
+        if (power instanceof PowerSpeed) {
             gameScene.setSpeed(gameSpeed);
             this.remove();
         }

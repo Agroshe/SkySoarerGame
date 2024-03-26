@@ -6,12 +6,10 @@ import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.Game.Entities.PipeObstacle;
-import org.Game.Entities.Power;
 import org.Game.Entities.Powerups.PowerDoublePoints;
 import org.Game.Entities.ScoreText;
 import org.Game.Entities.SkySourer;
 import org.Game.PipeSpawner;
-import org.Game.PowerTimer;
 import org.Game.SkySourerGame;
 
 import java.util.ArrayList;
@@ -22,7 +20,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     private double gameSpeed;
     private int gameGap;
     private SkySourer skySourer;
-    private Timer powerTimer;
+    //private Timer powerTimer;
     private PowerDoublePoints dubblePoints;
 
     private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
