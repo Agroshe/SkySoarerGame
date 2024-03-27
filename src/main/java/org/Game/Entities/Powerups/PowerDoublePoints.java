@@ -19,12 +19,12 @@ public class PowerDoublePoints extends Power {
     public void onCollision(List<Collider> collidingObjects) {
         gameScene.setScoreMultiplier(2);
         gameScene.startPowerTimer(this);
-        //todo : remove from powers list
-        //todo : start timer??
     }
 
     @Override
     public void notifyBoundaryCrossing(SceneBorder border) {
-        //todo : remove from powers list
+        if (border == SceneBorder.LEFT) {
+            this.remove();
+        }
     }
 }

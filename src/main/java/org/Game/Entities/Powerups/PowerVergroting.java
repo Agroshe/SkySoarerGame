@@ -23,6 +23,8 @@ public class PowerVergroting extends Power {
 
     @Override
     public void notifyBoundaryCrossing(SceneBorder border) {
-        //todo : remove from powers list
+        if (border == SceneBorder.LEFT) {
+            this.remove();
+        }
     }
 }

@@ -1,6 +1,5 @@
 package org.Game.Entities.Powerups;
 
-
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.scenes.SceneBorder;
@@ -19,12 +18,12 @@ public class PowerTransparancy extends Power {
     public void onCollision(List<Collider> collidingObjects) {
         gameScene.setCollision(false);
         gameScene.startPowerTimer(this);
-        //todo : remove from powers list
-        //todo : start timer??
     }
 
     @Override
     public void notifyBoundaryCrossing(SceneBorder border) {
-        //todo : remove from powers list
+        if (border == SceneBorder.LEFT) {
+            this.remove();
+        }
     }
 }

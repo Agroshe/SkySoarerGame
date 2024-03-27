@@ -10,10 +10,6 @@ import org.Game.Scenes.GameScene;
 
 public abstract class Power extends DynamicSpriteEntity implements Collided, SceneBorderCrossingWatcher {
 
-    protected int hight;
-
-    protected int width;
-
     protected GameScene gameScene;
 
     public Power(Coordinate2D location, double gameSpeed, GameScene gameScene, String filename) {
