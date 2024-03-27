@@ -15,7 +15,6 @@ import java.util.Scanner;
 public class SkySourerGame extends YaegerGame {
 
     private int Highscore;
-    private StartScene startScene;
     private GameScene gameScene;
     private final Size size = new Size(1000, 600);
 
@@ -34,12 +33,11 @@ public class SkySourerGame extends YaegerGame {
         setGameTitle("SkySourer");
         setSize(size);
         getHighscoreFromFile();
-
     }
 
     public void setupScenes() {
         gameScene = new GameScene(this, size.height());
-        startScene = new StartScene(this, gameScene);
+        StartScene startScene = new StartScene(this, gameScene);
 
         addScene(0, startScene);
         addScene(1, gameScene);

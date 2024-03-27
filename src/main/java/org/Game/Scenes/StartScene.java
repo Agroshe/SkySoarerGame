@@ -37,13 +37,13 @@ public class StartScene extends StaticScene {
         var textSpeed = new TextEntity(
                 new Coordinate2D(getWidth() / 2, getHeight() / 2 - 150), "Snelheid");
         var buttonSpeedSlow = new ButtonSpeed(
-                100, 60, new Coordinate2D(getWidth() / 2 - 100, getHeight() / 2 - 100), "Langzaam", this, (getHeight() * 0.003)
+                100, 60, new Coordinate2D(getWidth() / 2 - 100, getHeight() / 2 - 100), "Langzaam", this, (getHeight() * 0.006)
         );
         var buttonSpeedAverage = new ButtonSpeed(
-                100, 60, new Coordinate2D(getWidth() / 2, getHeight() / 2 - 100), "Gemiddeld", this, (getHeight() * 0.004)
+                100, 60, new Coordinate2D(getWidth() / 2, getHeight() / 2 - 100), "Gemiddeld", this, (getHeight() * 0.008)
         );
         var buttonSpeedFast = new ButtonSpeed(
-                100, 60, new Coordinate2D(getWidth() / 2 + 100, getHeight() / 2 - 100), "Snel", this, (getHeight() * 0.005)
+                100, 60, new Coordinate2D(getWidth() / 2 + 100, getHeight() / 2 - 100), "Snel", this, (getHeight() * 0.010)
         );
 
         var textGap = new TextEntity(

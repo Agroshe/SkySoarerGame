@@ -31,7 +31,7 @@ public class SkySourer extends DynamicSpriteEntity implements KeyListener, Scene
         score = 0;
         scoreMultiplier = 1;
         this.sceneHeight = sceneHeight;
-        setGravityConstant(sceneHeight * 0.000118);
+        setGravityConstant(sceneHeight * 0.0004);
     }
 
 
@@ -50,11 +50,11 @@ public class SkySourer extends DynamicSpriteEntity implements KeyListener, Scene
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         if (pressedKeys.contains(KeyCode.SPACE)) {
-            setMotion(sceneHeight * 0.0075, 180);
+            setMotion(sceneHeight * 0.012, 180);
         } else if (pressedKeys.contains(KeyCode.UP)) {
-            setMotion(sceneHeight * 0.0075, 180);
+            setMotion(sceneHeight * 0.012, 180);
         } else if (pressedKeys.contains(KeyCode.W)) {
-            setMotion(sceneHeight * 0.0075, 180);
+            setMotion(sceneHeight * 0.012, 180);
         }
     }
 
