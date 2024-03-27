@@ -15,6 +15,7 @@ import org.Game.Entities.Powerups.PowerVergroting;
 import org.Game.Entities.ScoreText;
 import org.Game.Entities.SkySourer;
 import org.Game.PipeSpawner;
+import org.Game.PowerSpawner;
 import org.Game.PowerTimer;
 import org.Game.SkySourerGame;
 
@@ -38,6 +39,8 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
     private PipeSpawner pipeSpawner;
 
+    private powerSpawner powerSpawner;
+
     public GameScene(SkySourerGame skySourerGame, double sceneHeight) {
         this.skySourerGame = skySourerGame;
         gameGap = (int) (sceneHeight * 0.4);
@@ -46,6 +49,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     public void setupScene() {
         pipeSpawner = new PipeSpawner(getHeight(), getWidth(), (int) (6000 / gameSpeed), gameSpeed, gameGap);
+        powerSpawner = new PowerSpawner(getHeight(), getWidth(), (int) (6000 / gameSpeed), gameSpeed, gameGap);
     }
 
     public void setupEntities() {
