@@ -11,17 +11,15 @@ import org.Game.SkySourerGame;
 public class PipeObstacle extends DynamicCompositeEntity implements SceneBorderCrossingWatcher {
 
     private int gap;
-    private SkySourerGame skySourerGame;
     private double sceneHeight;
     private Pipe topPipe;
     private Pipe bottomPipe;
     private GapHitBox gapHitBox;
 
-    public PipeObstacle(int gameGap, SkySourerGame skySourerGame, double gameSpeed, Coordinate2D location, double sceneHeight) {
+    public PipeObstacle(int gameGap, double gameSpeed, Coordinate2D location, double sceneHeight) {
         super(location);
         setMotion(gameSpeed, 270d);
         this.gap = gameGap;
-        this.skySourerGame = skySourerGame;
         this.sceneHeight = sceneHeight;
     }
 

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PowerDoublePoints extends Power {
 
-    protected PowerDoublePoints(Coordinate2D location, GameScene gameScene) {
+    public PowerDoublePoints(Coordinate2D location, GameScene gameScene) {
         super(location, gameScene.getGameSpeed(), gameScene, "sprites/doublePointsPowerup.png");
     }
 

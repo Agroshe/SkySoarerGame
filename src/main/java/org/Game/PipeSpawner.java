@@ -8,17 +8,14 @@ import org.Game.Scenes.GameScene;
 
 public class PipeSpawner extends EntitySpawner {
 
-    private double sceneHight;
+    private double sceneHeight;
     private double sceneWidth;
     private double gameSpeed;
     private int gameGap;
 
-    private GameScene gameScene;
-    private SkySourerGame skySourerGame;
-
-    public PipeSpawner(double sceneHight, double sceneWidth, int interval, double gameSpeed, int gameGap) {
+    public PipeSpawner(double sceneHeight, double sceneWidth, int interval, double gameSpeed, int gameGap) {
         super(interval);
-        this.sceneHight = sceneHight;
+        this.sceneHeight = sceneHeight;
         this.sceneWidth = sceneWidth;
         this.gameSpeed = gameSpeed;
         this.gameGap = gameGap;
@@ -26,7 +23,7 @@ public class PipeSpawner extends EntitySpawner {
 
     @Override
     protected void spawnEntities() {
-        var pipeObstacle = new PipeObstacle(gameGap, skySourerGame, gameSpeed, new Coordinate2D(sceneWidth - 1, ((Math.random() * ((sceneHight - 200) - 200)) + 200)), sceneHight);
+        var pipeObstacle = new PipeObstacle(gameGap, gameSpeed, new Coordinate2D(sceneWidth - 1, ((Math.random() * ((sceneHeight - 200) - 200)) + 200)), sceneHeight);
         spawn(pipeObstacle);
     }
 }

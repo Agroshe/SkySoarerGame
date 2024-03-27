@@ -31,12 +31,10 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     private Timer powerTimerTransparancy;
     private Timer powerTimerVergroting;
     private Timer powerTimerSpeed;
-    private PowerDoublePoints dubblePoints;
-    private PowerSpeed powerSpeed;
-    private PowerTransparancy powerTransparancy;
-    private PowerVergroting powerVergroting;
-
-    private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
+    private final String dubblePoints = "doublePoints";
+    private final String powerSpeed = "powerSpeed";
+    private final String powerTransparancy  = "powerTransparancy";
+    private final String powerVergroting  = "powerVergroting";
     private PipeSpawner pipeSpawner;
 
     private PowerSpawner powerSpawner;
@@ -49,7 +47,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     public void setupScene() {
         pipeSpawner = new PipeSpawner(getHeight(), getWidth(), (int) (6000 / gameSpeed), gameSpeed, gameGap);
-        powerSpawner = new PowerSpawner(getHeight(), getWidth(), (int) (6000 / gameSpeed), gameSpeed, gameGap);
+        powerSpawner = new PowerSpawner(getHeight(), getWidth(), (int) (6000 / gameSpeed), gameSpeed, gameGap,this);
     }
 
     public void setupEntities() {
