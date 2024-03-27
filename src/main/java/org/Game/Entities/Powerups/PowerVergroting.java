@@ -17,6 +17,7 @@ public class PowerVergroting extends Power {
 
     @Override
     public void onCollision(List<Collider> collidingObjects) {
+        gameScene.startPowerTimer(this);
         //todo
     }
 

@@ -18,6 +18,7 @@ public class PowerDoublePoints extends Power {
     @Override
     public void onCollision(List<Collider> collidingObjects) {
         gameScene.setScoreMultiplier(2);
+        gameScene.startPowerTimer(this);
         //todo : remove from powers list
         //todo : start timer??
     }
