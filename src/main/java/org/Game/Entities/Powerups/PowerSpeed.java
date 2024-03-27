@@ -18,6 +18,7 @@ public class PowerSpeed extends Power {
     @Override
     public void onCollision(List<Collider> collidingObjects) {
         gameScene.setSpeed(gameScene.getGameSpeed() + 2);
+        gameScene.startPowerTimer(this);
         //todo : remove from powers list
         //todo : start timer???
     }

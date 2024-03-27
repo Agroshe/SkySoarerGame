@@ -18,6 +18,7 @@ public class PowerTransparancy extends Power {
     @Override
     public void onCollision(List<Collider> collidingObjects) {
         gameScene.setCollision(false);
+        gameScene.startPowerTimer(this);
         //todo : remove from powers list
         //todo : start timer??
     }

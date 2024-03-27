@@ -3,13 +3,19 @@ package org.Game.Scenes;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.EntitySpawnerContainer;
+import com.github.hanyaeger.api.Timer;
 import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.Game.Entities.PipeObstacle;
+import org.Game.Entities.Power;
 import org.Game.Entities.Powerups.PowerDoublePoints;
+import org.Game.Entities.Powerups.PowerSpeed;
+import org.Game.Entities.Powerups.PowerTransparancy;
+import org.Game.Entities.Powerups.PowerVergroting;
 import org.Game.Entities.ScoreText;
 import org.Game.Entities.SkySourer;
 import org.Game.PipeSpawner;
+import org.Game.PowerTimer;
 import org.Game.SkySourerGame;
 
 import java.util.ArrayList;
@@ -20,8 +26,14 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     private double gameSpeed;
     private int gameGap;
     private SkySourer skySourer;
-    //private Timer powerTimer;
+    private Timer powerTimerDubbelPoints;
+    private Timer powerTimerTransparancy;
+    private Timer powerTimerVergroting;
+    private Timer powerTimerSpeed;
     private PowerDoublePoints dubblePoints;
+    private PowerSpeed powerSpeed;
+    private PowerTransparancy powerTransparancy;
+    private PowerVergroting powerVergroting;
 
     private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
     private PipeSpawner pipeSpawner;
@@ -68,10 +80,34 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     }
 
     public void setupTimers() {
-        //powerTimer = new PowerTimer(dubblePoints,this);
+        powerTimerDubbelPoints = new PowerTimer(dubblePoints,this);
+        powerTimerTransparancy = new PowerTimer(powerTransparancy,this);
+        powerTimerVergroting = new PowerTimer(powerVergroting,this);
+        powerTimerSpeed = new PowerTimer(powerSpeed,this);
+        addTimer(powerTimerDubbelPoints);
+        addTimer(powerTimerTransparancy);
+        addTimer(powerTimerVergroting);
+        addTimer(powerTimerSpeed);
+        powerTimerDubbelPoints.pause();
+        powerTimerTransparancy.pause();
+        powerTimerVergroting.pause();
+        powerTimerSpeed.pause();
+    }
+
+    public void startPowerTimer(Power namePower) {
+        if(namePower instanceof PowerDoublePoints) {
+            powerTimerDubbelPoints.resume();
+        }else if (namePower instanceof PowerTransparancy) {
+            powerTimerTransparancy.resume();
+        } else if (namePower instanceof PowerVergroting) {
+            powerTimerVergroting.resume();
+        } else if (namePower instanceof PowerSpeed) {
+            powerTimerSpeed.resume();
+        }
     }
 
     public double getGameSpeed() {
         return gameSpeed;
+
     }
 }
