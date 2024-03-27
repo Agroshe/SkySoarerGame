@@ -41,11 +41,11 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     public GameScene(SkySourerGame skySourerGame, double sceneHeight) {
         this.skySourerGame = skySourerGame;
         gameGap = (int) (sceneHeight * 0.4);
-        gameSpeed = 2;
+        gameSpeed = 4;
     }
 
     public void setupScene() {
-        pipeSpawner = new PipeSpawner(getHeight(), getWidth(), (int) (2000 / gameSpeed), gameSpeed, gameGap);
+        pipeSpawner = new PipeSpawner(getHeight(), getWidth(), (int) (6000 / gameSpeed), gameSpeed, gameGap);
     }
 
     public void setupEntities() {
