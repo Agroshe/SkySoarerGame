@@ -39,7 +39,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     private ArrayList<PipeObstacle> pipeObstacles = new ArrayList<>();
     private PipeSpawner pipeSpawner;
 
-    private powerSpawner powerSpawner;
+    private PowerSpawner powerSpawner;
 
     public GameScene(SkySourerGame skySourerGame, double sceneHeight) {
         this.skySourerGame = skySourerGame;
@@ -65,6 +65,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
 
     public void setupEntitySpawners() {
         addEntitySpawner(pipeSpawner);
+        addEntitySpawner(powerSpawner);
     }
 
     public void setCollision(boolean collision) {
