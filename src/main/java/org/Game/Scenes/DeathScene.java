@@ -55,7 +55,6 @@ public class DeathScene extends StaticScene {
         textHighScore.setFont(Font.font("Verdana", FontWeight.BOLD, 20));
         textHighesScore.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         textHighesScore.setFont(Font.font("Verdana", FontWeight.BOLD, 20));
-        //buttonRestart.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         rectangleScore.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         rectangleScore.setFill(Color.WHITE);
         rectangleScore.setStrokeColor(Color.BLACK);

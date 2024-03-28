@@ -2,7 +2,6 @@ package org.Game;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.EntitySpawner;
-import org.Game.Entities.PipeObstacle;
 import org.Game.Entities.Powerups.PowerDoublePoints;
 import org.Game.Entities.Powerups.PowerTransparancy;
 import org.Game.Scenes.GameScene;

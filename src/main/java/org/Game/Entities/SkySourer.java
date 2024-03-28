@@ -7,8 +7,8 @@ import com.github.hanyaeger.api.entities.*;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
-import org.Game.SkySourerGame;
 import javafx.scene.input.KeyCode;
+import org.Game.SkySourerGame;
 
 import java.util.List;
 import java.util.Set;

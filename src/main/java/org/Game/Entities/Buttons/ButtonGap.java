@@ -1,9 +1,8 @@
 package org.Game.Entities.Buttons;
 
 import com.github.hanyaeger.api.Coordinate2D;
-import org.Game.Scenes.StartScene;
-import org.Game.SkySourerGame;
 import javafx.scene.input.MouseButton;
+import org.Game.Scenes.StartScene;
 
 
 public class ButtonGap extends Button {

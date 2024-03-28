@@ -1,10 +1,6 @@
 package org.Game;
 
 import com.github.hanyaeger.api.Timer;
-import org.Game.Entities.Power;
-import org.Game.Entities.Powerups.PowerDoublePoints;
-import org.Game.Entities.Powerups.PowerSpeed;
-import org.Game.Entities.Powerups.PowerTransparancy;
 import org.Game.Scenes.GameScene;
 
 public class PowerTimer extends Timer {
@@ -36,10 +32,6 @@ public class PowerTimer extends Timer {
             this.reset();
             this.pause();
         }
-//        if(power instanceof PowerDoublePoints){
-//            gameScene.setScoreMultiplier(1);
-//            this.remove();
-//        }
     }
 
 }

@@ -7,9 +7,9 @@ import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import com.github.hanyaeger.api.userinput.MouseEnterListener;
 import com.github.hanyaeger.api.userinput.MouseExitListener;
 import javafx.scene.Cursor;
+import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 import org.Game.SkySourerGame;
-import javafx.scene.input.MouseButton;
 
 
 public abstract class Button extends CompositeEntity implements MouseEnterListener, MouseExitListener, MouseButtonPressedListener {
