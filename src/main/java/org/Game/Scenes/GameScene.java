@@ -31,7 +31,7 @@ public class GameScene extends DynamicScene implements EntitySpawnerContainer, T
     private Timer powerTimerTransparancy;
     private Timer powerTimerVergroting;
     private Timer powerTimerSpeed;
-    private final String dubblePoints = "doublePoints";
+    private final String dubblePoints = "powerDoublePoints";
     private final String powerSpeed = "powerSpeed";
     private final String powerTransparancy  = "powerTransparancy";
     private final String powerVergroting  = "powerVergroting";
