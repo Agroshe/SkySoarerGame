@@ -12,8 +12,6 @@ public class GapHitBox extends RectangleEntity implements Collider {
         super(location);
         setWidth(2);
         setHeight(gap);
-        setFill(Color.ORANGE);
-
+        //setFill(Color.ORANGE);
     }
-
 }
