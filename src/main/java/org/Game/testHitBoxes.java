@@ -4,7 +4,7 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 import org.Game.Scenes.GameScene;
 
-public class SkySourerGame extends YaegerGame {
+public class testHitBoxes extends YaegerGame {
 
 	public static void main(String[] args) {
 		String[] arguments = new String[args.length + 1];
@@ -16,7 +16,7 @@ public class SkySourerGame extends YaegerGame {
 	}
 
 	public void setupGame() {
-		setGameTitle("SkySourer");
+		setGameTitle("testHitBoxes");
 		setSize(new Size(900));
 	}
 
